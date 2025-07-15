@@ -4,6 +4,7 @@ package com.example.findinglogs.viewmodel;
 import android.app.Application;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.Toast;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -13,6 +14,7 @@ import com.example.findinglogs.model.model.Weather;
 import com.example.findinglogs.model.repo.Repository;
 import com.example.findinglogs.model.repo.remote.api.WeatherCallback;
 import com.example.findinglogs.model.util.Logger;
+import com.example.findinglogs.view.MainActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +46,7 @@ public class MainViewModel extends AndroidViewModel {
         handler.postDelayed(fetchRunnable, FETCH_INTERVAL);
     }
 
-    private void fetchAllForecasts() {
+    public void fetchAllForecasts() {
         if (Logger.ISLOGABLE) Logger.d(TAG, "fetchAllForecasts()");
         HashMap<String, String> localizations = mRepository.getLocalizations();
         List<Weather> updatedList = new ArrayList<>();
