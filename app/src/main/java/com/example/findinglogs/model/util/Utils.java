@@ -39,7 +39,7 @@ public class Utils {
             if (Logger.ISLOGABLE)
                 Logger.w(TAG, "can't retrieve drawable resource: getting default");
             drawable = ResourcesCompat
-                    .getDrawable(resources, R.drawable.ic_launcher_foreground, null);
+                    .getDrawable(resources, R.drawable.weather_icon_atencao, null);
         }
         return drawable;
     }
